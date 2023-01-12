@@ -119,7 +119,7 @@ choseFileBtn.sendKeys(path of the file);
 uploadBtn.click();
 =========
 
-How do you handle iFrames In Selenium?
+//How do you handle iFrames In Selenium?
 
 *we find the iframe first and than we switch to it
 WebElement iframe=driver.findElement();
