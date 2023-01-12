@@ -23,9 +23,9 @@ Selenium WebDriver
 
 Difference between css and xpath?
 -Xpath allows tow direction flow which means the traversal can be both ways from parent to child and child to parent as well.
-Ex //tagname[@ attribute='value']/imediate child 
+Ex //tagname[@ attribute='value']/imediate child .
 //tagname[@ attribute='value']/..parent 
- Css allows only one directional flow means the traverse is  from parent to child only.
+ Css allows only one directional flow means the traverse is  from parent to child only...
 
 2-Xpath is slower in terms of performance and speed. Css has better performance and speed than xpath.
 
