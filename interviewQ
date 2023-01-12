@@ -1,0 +1,304 @@
+
+What are the benefits of Selenium?
+Selenium is open source:
+selenium is cross-platform:operating shstem (	Window,Mac,IOS)
+selenium is cross browser(chrome,edge,firefox)
+selenium work with defirent languges(java,c#,Ruby,Javescript     )
+========
+
+What kind of different locators do you know?
+ID,Name,xpath,css,tagName,link Text,partial Link,class Name
+=========
+Explain difference between / VS // in xpath?
+/ absolut xpath direct child
+// relative xpath grand child
+
+==========
+What aer the componments 
+Selenium IDE ()tools to help us tests :testing tools
+Selenium Grid ->to run your tests in paralle
+Selenium Rc ->(remote Control) it not  use any more (deprecated)
+Selenium WebDriver
+
+
+Difference between css and xpath?
+-Xpath allows tow direction flow which means the traversal can be both ways from parent to child and child to parent as well.
+Ex //tagname[@ attribute='value']/imediate child 
+//tagname[@ attribute='value']/..parent 
+ Css allows only one directional flow means the traverse is  from parent to child only.
+
+2-Xpath is slower in terms of performance and speed. Css has better performance and speed than xpath.
+
+3-Xpath  has text(), function allows identification with the help of visible text . Ex  // [text()='home']
+//tagname[contains (text(),'value')].
+css does not have this feature
+
+4- Xpath uses // and @ to locate a WebElement, while CSS doesn’t →
+ 
+Ex //tagName[@attribute='value'] vs tagName[attribute='value']
+
+4-Customized css can be created directly with the help of attributes id and class. For id, the css expression is represented by # followed by the id [ #<<id expression>>. For class, the css expression is represented by . followed by the class [.<<class expression>>]. Xpath does not have any feature like this.
+=====================
+
+
+Syntax of explicit wait for waiting element to be clickable?
+WebDriverWait wait=new webDriverWait(driver,timeUnite);
+WebElement element= wait.until(expectedCondition.elementToBeclickebil(element)),
+=========
+
+
+How to handle Drag And Drop in Selenium?
+Actions actions=new actions(driver);
+actions.dragAnaHold(dragbleitem,drozone).build().perform();
+actions.clickAnd Hold(dragbleItem).movetoElement(dropZone).release().build().perform();
+=========
+How to handle dropdown in Selenium?
+Select select=new select(dropdown);
+select.selectByIndex();
+select.selectByVisibleText();
+select.selectByValue();
+===========
+
+How to handle pop-ups in Selenium?
+Alert alertMessage=driver.switch().alert();
+alertmessage.accept();
+alertMessage.dismiss();
+alertMessage.getText();
+alertMessage.sendKeys("text");
+=========
+
+Difference between Implicitly and explicitly wait?
+implicitly wait is wait (for HTML to be loaded each time we call findW=Element method)until browser loads all elements and it will be applied for all the findelement and findElements methods,wait for the provide time before throwing exception.
+driver.manage().timeouts().implicitlyWait(time,TimeUnit);
+
+explicilty wait is wait for certain condition to be met Ex element to be clickable or visible text.
+WebElementWait explicitlywait=new WebElementWait(driver,TimeUnit);
+explicitlyWait=wait.until(expectedCondition.elementToBevisible(element));
+=======
+
+
+========
+
+How would you handle scroll up and scroll down in Selenium?
+using javascriptexecuter in selenium
+javaScript executer js=((javaScript)driver);
+js .executeScript("window.scroll(horizontal pixel,vertical pixels")
+js.
+=========
+
+
+What is the difference between findElement and findElements method?
+
+-findElement find single element t=if we dont find that element it will throw exception.
+-findElements find a set of elements if driver can't find any it will just return empty list 
+==================
+
+
+How do you handle pop up window in Selenium?
+Driver. getWindowHandle(); When the webpage is loaded, you can handle the main window by using driver. getWindowHandle().
+================
+
+How do you handle multiple windows in Selenium?
+Set<String>windowsIDs=driver. getWindowHandles();
+String currentwindow =driver.getwindowHndale()
+for (String id:windowsIDs){
+if(!currentWindowid.equals(id);
+driver,switch to().window(id)
+}
+}
+driver.switch().parentWindow
+//In order to handle the opened windows by Selenium webdriver, you can use Driver. getWindowHandles() //to switch between the windows.
+driver.switch().window(windowId);
+
+=======
+How do you upload file in Selenium?
+
+WebElement choseFileBtn=driver.findElement();
+WebElement uploadBtn=driver.findElement();
+choseFileBtn.sendKeys(path of the file);
+uploadBtn.click();
+=========
+
+How do you handle iFrames In Selenium?
+
+*we find the iframe first and than we switch to it
+WebElement iframe=driver.findElement();
+driver.switchTo().frame(iframe);
+*to switch back to the main page we use
+driver.switchTo().defaultContent();
+========
+
+
+What is the Maven and what are the benefits of using Maven?other tools(Gradle,Ant)
+Maven is build/project managements tools
+Maven help us manage our libraries /dependecies(reposotiry) and plugins
+sturcture our project
+pom.xml
+src/main ->used by devolopers 
+src/test devolopers write thier unit tests .as testers we use test folder for our automation.
+
+
+How do you manage your dependencies?
+We manage independicies with maven on POM.Xml we dowload our independicies /laibraries to be an=ble to use them on our frame work
+=================
+
+
+Where do you get ur independicies
+1 Maven repository
+2 Own artifactory ==Nexus(our own company have her own artifactory the name of it Nexus)
+
+
+What maven commands you know?(Maven lifecycle)
+mvn test
+mvn install
+mvn biuld
+==============
+
+Explain TestNG annotations you use in your project?
+@BeforeMethod:we runs before each test method
+@After Method: run after each method 
+@test  to run our  test code
+@dataBrovider used for Data driven Testing DDT testing functionality with different set of data
+
+
+How do you prioritize test methods in automation?
+
+
+=============
+
+You are using TestNG and how do you run the tests through Maven? 
+We use mvn test command to run our test cases Teating
+++++++++++++++++++++++++
+
+
+How do you generate report in TestNG?
+We should add surefire plugin in ourpom.xml,then we should run our test cases and it will be generated in target folder 
+========================
+
+
+How DataProvider works in TestNG?
+DataProvider annotatiom is used to test functionality with multiple sets of data.(data Driven Testing )it is a method that returns multidimentional array of objects->object
+===================
+
+
+How do you Parametrize in TestNG? 
+
+What is testng.xml file and why it is needed?
+File where configure what test classs and groups we are running.
+=========================
+
+
+Where do you store your configuration data?
+we strore it in properties file we store data like URL,username,password,browser name.
+================
+
+Why you chose to use POM Design Pattern for your project? What are the advantages of using POM?
+we chose to use POM to structure and organize my frame work POM help me reuse my webElement and me methode by storing them on Pom and in case of change or broken locator i just need to go to the spicific page and change it instade of changing it on multiple clases easy maintnamce
++++++++++++++++++++++++++
+
+What is the difference between Hard assertion and Soft assertion?
+hard assortion if test failed my code will stop 
+soft assertion if test failled it will move the next one withot stoping the execution of the code
+=======================
+
+What is TestBase class and where do you use it?
+testBase class is class under utilities pakage on my frame work and we useit to have  our  @BeforeMethod and @AfterMethod and we extend that class on opur test class to be able to use those methods'
+=======================
+
+How do you group your test cases in TestNG?
+by using groups parameter for  @Test notations and mntion what group we want to include our test and we mention what groups we want excute in our testNG.xmlc.....
+-------------------------------------------------
+
+Cucumber Questios :
+What are the benefits of cucumber framework?
+1-it is understandable for non technical people written with Gherkin language
+2Cucumber steps are resuble
+Cucumber is open source (free)
+Behavior Driven Development
+==================
+
+What is the runner class?
+We run our scenarios from runner class 
+we have glue parameter  where we provide path for step definition classes
+we have features parameter where we provide path for feature file
+=================================
+
+
+What is the Hooks class?
+in hook class we have our @Before and @After methods that runs before and after each scenario 
+@ Before @after come from cucumber
++++++++++++++++++++++++++=
+Do you use Cucumber with TestNG?
+No ,i use with with JUnit .but we can also use it with TestNG
+
+
+ 
+
+General Questions:
+
+ 
+
+Tell me about yourself?
+
+Tell me about your framework?
+
+Tell me about your daily activity?
+
+How many test cases in Regression suite?
+250
+
+How many test cases in Smoke suite?
+25
+
+How often you run regression and smoke suite?
+regrssion every 4 sprint before the relaise
+smoke evrey day
+
+How do you run you test suites?
+on testNG.xml file we chose the test suit we need to run and the classes
+
+Where do you write your test cases
+we write them on google sheet
+
+Where do you get your test data?
+from the  the devop
+we fake it 
+
+Who creates test data?
+================
+
+
+Tell me about ur self
+I just want to thank you for the opportunity to discuss this position. Again, my name is Najya
+
+Doukkali. I have been in the QA industry for over 5 years now. I have been fortunate enough
+
+to work in agile but in know waterfall environments and been in various domains including
+
+telecommunications, banking, and insurance. I am specialized in automation but I am cross-
+
+functional team member and well versed in manual testing as well. In my projects, I have used
+
+automation tools like Selenium WebDriver with java, maven, Junit, and Continuous integration
+
+Jenkins. To manage tests I have used Jira, ALM, and Bugzilla. I also have strong knowledge and
+
+executed functional testing, regression testing, and smoke testing. And excited to further discuss
+
+the opportunity in detail with you
+
+2. Tell me about your Day to day activity?
+I start my day with checking my email. If I have important emails that I need to respond then I do it as priority. I also check my smoke test report on my email that I get from Jenkins. If I have failed test cases in my smoke test, then I retest them manually. After that we have daily stand up meeting at 9 am every morning that lasts for 15 minutes. In this meeting we discuss what we have done yesterday and what we are going to do today and if there are any blockers. After the meeting I continue for my work and it depends on sprint time what work I do. If it is beginning of sprint I usually analyze my user stories and attends sprint planning meeting. If it is middle of sprint I am usually busy with writing test cases and doing manual testing. If it is end of sprint then I do automation testing and attend sprint demo meeting where I demonstrate my job that to product owners and stakeholders I have complete during the sprint. We also have retro meeting at the end of the day. This is pretty much my daily activity. Oh I forgot, I grab my coffee before I start my day.)
+
+ 
+
+
+  --The super interface of webDriver interface is SearchContext
+
+
+ 
+
+
+Be the first to add a reaction
+
+
